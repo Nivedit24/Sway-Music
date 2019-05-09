@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<title>Sway-Music</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="logo.png">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+img {
+  border-radius: 50%;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("background1.jpg");
+  min-height: 100%;
+  width: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+.mySlides {display:none;}
+
+.buscar-caja {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ align-items: center;
+ transform: translate(-50%, -50%);
+ background: #2f3640;
+ height: 40px;
+ border-radius: 40px;
+ padding: 10px;
+}
+
+.buscar-caja:hover > .buscar-txt {
+ width: 240px;
+ padding: 5 6px;
+}
+
+.buscar-caja:hover > .buscar-btn {
+ background: black;
+ color: goldenrod;
+}
+
+.buscar-btn {
+ color: #e84118;
+ float: center;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background: goldenrod;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.4s;
+ color: black;
+ cursor: pointer;
+}
+
+.buscar-btn > i {
+ font-size: 30px;
+}
+
+.buscar-txt {
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ color: white;
+ font-size: 16px;
+ transition: 0.4s;
+ line-height: 40px;
+ width: 0px;
+ font-weight: bold;
+}﻿
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card " id="myNavbar">
+    <a href="main.html" class="w3-bar-item w3-button w3-wide"><img src="logo.png" height="80" width="108" alt="Logo" align="left"></a>
+    <br>
+    <div class="buscar-caja">
+   <input type="text" name="" class="buscar-txt" style="margin-top: -10px" placeholder="Search..."/>
+   <div class="buscar-btn" style="margin-top: -10px">
+    <i class="fa fa-search"></i>
+   </div>
+  </div>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="main.html#about" class="w3-bar-item w3-button" style="color: Goldenrod">ABOUT</a>
+      <a href="faq.html" class="w3-bar-item w3-button" style="color: Goldenrod"><i class="fa fa-question" style="color: Goldenrod"></i> FAQ</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color: Goldenrod"><i class="fa fa-sign-out" style="color: Goldenrod"></i> LOG OUT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-goldenrod w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-music" style="color: Black"></i> Songs</a>
+  <a href="#artists" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-headphones" style="color: Black"></i> Artists</a>
+  <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-sign-out" style="color: Black"></i> Log Out</a>
+</nav>
+<br><br><br>
+
+<div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-third" style=" background-color: black">
+      <br>
+      <img src="img_avatar.png" alt="Avatar" style="width:200px ">
+      <p class="w3-large" style="color: goldenrod">User Name</p>
+      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button" style="color: goldenrod"><i class="fa fa-music" style="color: goldenrod"></i>  Songs</a><br>
+      <a href="#artists" onclick="w3_close()" class="w3-bar-item w3-button" style="color: goldenrod"><i class="fa fa-headphones" style="color: goldenrod"></i>  Artists</a><br>
+      <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button" style="color: goldenrod"><i class="fa fa-sign-out" style="color: goldenrod"></i>  Log Out</a><br>
+    </div>
+    <div class="w3-two-third" >
+      <i class="fa fa-music w3-margin-bottom w3-jumbo" style="color: Goldenrod"></i>
+      <p class="w3-large" style="color: goldenrod">Songs</p>
+      <p > Songs go here</p>
+    </div>
+  </div>
+  <br><br>
+<!-- Footer -->
+<footer class="w3-center w3-goldenrod w3-padding-64">
+  <a href="main.html" class="w3-bar-item w3-button w3-wide"><img src="logo.png" height="80" width="108" alt="Logo" align="center"></a>
+  <p>Sway-Music &copy; 2019</p>
+  <p> All rights reserved</p>
+</footer>
+
+<script>
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+</script>
+ 
+</body>
+</html>
